@@ -1,0 +1,15 @@
+public const home = '/';
+/node_modules
+/public/hot
+/storage/*.key
+/public/storage
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/public/css
+/public/js

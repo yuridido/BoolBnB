@@ -1,0 +1,167 @@
+// Sass variables
+$primary_background: #ffffff;
+$secondary_color: #202842;
+$button_background:#2b140b;
+
+$main_background: rgb(255, 255, 255);
+
+$input_border_color: #DCDFF1;
+$placeholder_color: #5D698D;
+
+$box_shadow_one: 0px 8px 15px rgba(0, 0, 0, 0.1);
+$box_shadow_two: 0px 10px 20px rgba(43, 20, 11, 0.315);
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.login_btn,
+.signup_btn,
+.google_login,
+.facebook_login,
+.linkedin_login {
+    padding: 0.8em 3.5em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: $box_shadow_one;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    letter-spacing: 1px;
+
+    &:hover {
+        box-shadow: $box_shadow_two;
+        transition: all .3s ease-in-out 0s;
+    }
+}
+
+.signup_container {
+    background: $main_background;
+    @include flex(row,center,center);
+    flex:1;
+    width: 100%;
+    
+   @include responsive(large_desktop){
+       align-items:flex-start;
+       margin-top: 3rem;
+   }
+
+    .login_btn {
+        border: 1px solid $primary_background;
+        color: $primary_background;
+        background-color: transparent;
+        margin: 15px 0;
+
+        &:hover {
+            background-color: $primary_background;
+            color: $button_background;
+        }
+    }
+    
+
+    .signup {
+        color: $secondary_color;
+        width: 400px;
+        border: 2px solid #eaeaea;
+        padding: 13px;
+        box-shadow: $box_shadow_one;
+        
+
+        .register-title {
+            text-align: center;
+            font-size: 14px;
+            margin: 4px 0;
+        }
+
+        form {
+            label {
+                font-size: 14px;
+                font-weight: 600px;
+                text-transform: capitalize;
+            }
+
+            input {
+                padding: 15px 20px;
+                border-radius: 3px;
+                // border: 2px solid $input_border_color;
+                width: 100%;
+                margin: 5px 0;
+
+                &::placeholder {
+                    font-size: 16px;
+                    color: $placeholder_color;
+                }
+            }
+
+            .name_inputs {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .date{
+                margin-bottom: 10px;
+            } 
+            
+            .checkbox {
+                width: auto;
+                margin: 5px 10px 20px 0;
+            }
+
+            span {
+                font-size: 14px;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            .signup_btn {
+                width: 100%;
+                background-image: var(--gradient-color);
+                color: $primary_background;
+            }
+
+            .or_else {
+                font-size: 11px;
+            }
+        }
+
+        .social_logins {
+            display: flex;
+            justify-content: center;
+                .google_login,
+                .facebook_login,
+                .linkedin_login {
+                    background-color: transparent;
+                    margin: 2px;
+                    border: 1px solid $button_background;
+                
+                    i {
+                        color: $button_background;
+                    }
+                }
+        }
+    }
+}
+
+// controllo form
+.error{
+    border: 0.2rem solid#d60565;
+}
+
+.message-E{
+    font-size: 1.2rem;
+    color: white;
+    
+}
+
+.message-on{
+    color: #d60565;
+}
+

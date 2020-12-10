@@ -1,0 +1,33 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+// abstract
+@import 'abstract/mixins';
+@import 'abstract/var';
+//base
+@import 'layout/base';
+
+
+// layout
+@import 'layout/grid';
+@import 'layout/footer';
+@import 'layout/navigation';
+@import 'layout/mobilemenu';
+//pages
+@import 'pages/home';
+// @import 'pages/messages';
+@import 'pages/add';
+@import 'pages/apartment';
+@import 'pages/auth/register';
+@import 'pages/auth/login';
+@import 'pages/auth/verify';
+@import 'pages/search';
+@import 'pages/logged/sponsor';
+@import 'pages/logged/myapartments';
+@import 'pages/logged/messages';
+//animations
+@import 'animations/animations';

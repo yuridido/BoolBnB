@@ -1,0 +1,324 @@
+.container__search {
+    height: inherit;
+    width: inherit;
+    flex: 1;
+    width: 100%;
+    @include flex(row, flex-start, stretch);
+    color: var(--color-font-black);
+
+    @include responsive(tab){
+        @include flex(column, flex-start, stretch);
+    }
+    &-left {
+        flex: 1.4;
+        max-height:  calc(100vh -  var(--nav-height));
+        overflow-y: scroll;
+        
+        @media screen and (max-width:600px){
+            max-height: fit-content;
+            
+        }
+          
+        &__top {
+            @include flex(column, flex-start, flex-start);
+            padding: 0 2.4rem;
+            padding-top: 5rem;
+      
+            &__text {
+                font-size: 3.2rem;
+
+            }
+
+            &__filters{
+                width: 50%;
+            }
+
+        }
+
+    }
+    &-right {
+        flex: 1.6;
+        max-height:  calc(100vh -  var(--nav-height));
+        min-height: calc(100vh -  var(--nav-height));
+        @include responsive(tab){
+            display: none;
+      }
+      
+        
+       
+        @include responsive(small_desktop){
+               flex: 1;
+         }
+       
+    }
+    .search__resoults__apartment-cards {
+        @include flex(row, flex-start, flex-start);
+        padding: 0 2.4rem;
+        flex-wrap: wrap;
+        max-width: 100%;
+
+        &-content {
+            @include flex(column,flex-start, flex-start);
+            flex: 0 0 calc(100% / 3 - 2rem);
+            padding: .8rem 0.8rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            min-height: 23.1rem;
+            border-radius: 0.8rem;
+            height: 35rem;
+            max-height: 35rem;
+            box-shadow: $box_shadow_one;
+            // border:1px solid rgba(0, 0, 0, 0.4);
+
+            &:hover {
+                box-shadow: $box_shadow_two;
+            }
+
+            @include responsive(large_desktop){
+                flex: 0 0 calc((100% - 6rem)/ 3);
+            }
+
+
+            @include responsive(tab){
+                flex: 0 0 calc((100% - 4rem) / 2);
+            }
+            @include responsive(phone){
+                flex: 1 1 calc(100% - 2rem);
+            }
+
+            &__text{
+                @include flex(column,space-between,stretch);
+                flex: 1 0;
+                width: 100%;
+                padding-top: 1.5rem;
+                max-height: 50%;
+            }
+
+            &-form {
+                width: 100%;
+                flex:1 0;
+                @include flex(column,flex-end,flex-end);
+                justify-self: flex-end;
+                align-self: flex-end;
+            }
+
+            &-slider {
+                position: relative;
+                flex: 0 0 100%;
+                width: 100%;
+                max-height: 50%;
+                @include responsive(tab){
+                    height:30rem;
+                }
+                &:hover .search__resoults__apartment-cards-content-slider-icons {
+                    opacity:1;
+                }
+
+
+            &-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.8rem;
+                margin-bottom: 0.6rem;
+                transition: all .2s;
+              }
+              &-icons{
+                  opacity: 0;
+                  position: absolute;
+                  top:50%;
+                  transform: translate(-50%, -50%);
+                  font-size:1rem;
+                  background-color: #fff;
+                  height: 3rem;
+                  width: 3rem;
+                  text-align: center;
+                  color:lightgrey;
+                  border-radius:50%;
+                  @include flex(row,center, center);
+                  transition: all .3s;
+                  
+
+                  &:hover {
+                      color:var(--pink-bnb);
+                      transform: translate(-50%, -50%) scale(1.1);
+                  }
+                  &:active {
+                      transform: translate(-50%, -50%) scale(1);
+                  }
+                  &-left{
+                     left:7%;
+                  }
+                  &-right{
+                    right: -3.5%;
+                  }
+
+              }
+            }
+            &-city {
+                font-size: 1.4rem;
+                margin-bottom: 0.6rem;
+                text-transform: capitalize;
+                font-weight:800;
+            }
+            &-description {
+                font-size: 1.6rem;
+                margin-bottom: 1.6rem;
+            }
+        }
+    }
+}
+#marker {
+    background-image: url("../../img/pinHome.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+.selected {
+    background-color:#F5F5F5;
+}
+
+.list-entry {
+    border: 10px solid green;
+}
+#address-inst{
+    text-transform:capitalize;
+}
+.services{
+    padding: 2rem 0;
+    @include flex(row,space-around, center);
+    flex-wrap: wrap;
+    width: 100%;
+    &-all{
+        cursor: pointer;
+        border-radius:3rem;
+        padding:.8rem 1.6rem;
+        font-size:1.4rem;
+        background-color:#fff;
+        border:1px solid rgb(176,176,176);
+        margin-right:1rem;
+        transition: all .2s;
+        margin-bottom: 1rem;
+        flex:0 0 calc(50% - 1rem);
+
+
+    }
+
+}
+.filter-search{
+    @include flex(row, center,center);
+    margin-bottom: 2rem;
+    @extend %button-default;
+    width:fit-content;
+    padding:.8rem 1.6rem;
+    background-image: var(--gradient-color);
+    color: #fff;
+}
+.mapboxgl-canvas:focus, canvas:focus{
+    border:none;
+    outline:none;
+}
+.control{
+    border:1px solid $red;
+}
+.service-selected{
+    border:1px solid var(--pink-bnb);
+    background-color:var(--pink-bnb);
+    color: #fff;
+}
+.visualizza-appartamneto{
+    @extend %button-default;
+    align-self: center;
+
+
+    &:hover{
+        background-color: var(--pink-bnb);
+        color: #fff;
+        transform: translateY(-4px);
+        border:1px solid var(--pink-bnb);
+    }
+    &:active{
+        transform: translateY(0px);
+    }
+
+}
+
+.services-icons, .details-recap {
+    @include flex(row,space-around, center);
+    padding-top: 5px;
+    & i{
+        font-size:2rem;
+
+        color:var(--pink-bnb);
+
+        &:not(:last-child) {
+            margin-right:1rem;
+        }
+    }
+
+}
+.filter-toggle{
+    margin:2rem 0;
+    font-size:1.6rem;
+    cursor: pointer;
+    @extend %button-default;
+    width:fit-content;
+
+}
+
+
+
+.details-recap {
+    list-style: none;
+
+}
+
+.sponsor-1 {
+    background-color: Cornsilk;
+}
+.filter__chars{
+    @include flex(column, flex-start, flex-start);
+    font-size:2rem;
+    width: 100%;
+   &-item {
+       @include flex(row,flex-start,flex-start);
+       margin-bottom:2rem;
+       min-width: 100%;
+   }
+  &-name{
+      flex: 1;
+  }
+
+    &-range{
+        @include flex(row,flex-start, center);
+        flex:1 1;
+    }
+    &__numbers{
+        flex: 0 0 10%;
+        @include flex(column,center, center);
+        min-height: 100%;
+    }
+}
+
+.plus,.minus{
+    width: 3rem;height: 3rem;
+    border: 1px solid #b0b0b0;
+    color: #b0b0b0;
+    border-radius: 50%;
+    @include flex(column,center, center);
+    cursor: pointer;
+    margin:0 2rem;
+}
+.chevron-filter{
+    transition:all .2s;
+}
+.filter-chevron-rotate{
+    transform: rotate(180deg);
+}
+.filter-chevron-rotate-back{
+    transform: rotate(-180deg);
+}

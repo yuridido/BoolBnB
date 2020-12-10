@@ -1,0 +1,132 @@
+.apartments-list{
+    @include flex(column, flex-start, flex-start);
+}
+.apt-info-general{
+    height: 40rem;
+    max-height:40rem;
+    width: 100%;
+    @include flex(row,flex-start, flex-start);
+    margin-bottom:2rem;
+    border-bottom: 1px solid lightgrey;
+    padding:2rem 0;
+    
+    
+}
+.apt-info-sx{
+    height: 100%;
+    max-height: 100%;
+    flex: 0 0 calc(100% / 3);
+    position: relative;
+    @media screen and (max-width:1320px){
+        display:none;
+   }
+    & img{
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        border-radius: 0.8rem;
+
+     
+   
+    }
+    
+}
+.inactive-msg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size:1.6rem;
+    background-color:rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    @include flex(row,center, center);
+    color: #fff;
+    border-radius:1.1rem;
+}
+.apt-info-dx{
+    font-size:1.4rem;
+}
+.apt-title{
+    font-size:1.6rem;
+    font-weight: 800;
+    margin-bottom:2rem;
+}
+.apt-img-small{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.apt-info-dx{
+    flex: 1;
+    @include flex(column, flex-start, flex-start);
+    margin-left: 2rem;
+    min-height: 100%;
+
+    & p {
+        margin-bottom:2rem;
+    }
+}
+.apt-info-sponsor{
+    flex: 0 0 calc(100% / 3);
+}
+.head{
+    margin-bottom:4rem;
+    padding: 2rem 0;
+    font-size:1.6rem;
+    @include flex(row,space-between,center);
+
+    @media screen and (max-width:976px){
+        flex-direction:column;
+    }
+
+
+    & a{
+        @extend %button-default;
+        border: 1px solid transparent;
+        color:#fff;
+        font-weight:800;
+        background-image: var(--gradient-color);
+        letter-spacing:.1rem;
+        @media screen and (max-width:976px){
+            margin-top: 2rem;
+        }
+    
+    }
+}
+.apt-services-show{
+    list-style: none;
+    @include flex(row, flex-start, flex-start);
+    font-size:2rem;
+    color: $blue;
+    & li{
+        margin-right:2rem;
+    }
+}
+.apartments__go-to{
+    flex:1;
+    @include flex(column, flex-end, flex-end);
+    width: 100%;
+
+    @media screen and (max-width:920px){
+        height:40rem;
+        max-height:40rem;
+        align-items: center;
+    }
+}
+.apartment-button{
+    justify-self: flex-end;
+    @extend %button-default;
+    color:var(--color-font-black);
+}
+.apt-info-sponsor{
+    margin-top: 2rem;
+    @include flex(column, center, center);
+
+    & i{
+        color: gold;
+        font-size:2rem;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,57 @@
+@include responsive(phone) {
+  @for $i from 1 through 12 {
+    .col-xs-#{$i} {
+      width: calc((100% / 12) * #{$i});
+    }
+  }
+}
+
+@include responsive(tab) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: calc((100% / 12) * #{$i});
+    }
+  }
+}
+
+@include responsive(desktop) {
+  @for $i from 1 through 12 {
+    .col-lg-#{$i} {
+      width: calc((100% / 12) * #{$i});
+    }
+  }
+}
+
+@include responsive(large_desktop) {
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} {
+      width: calc((100% / 12) * #{$i});
+    }
+  }
+}
+
+.container-page {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  
+}
+
+.container-center {
+  padding: 0 8rem;
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  height: 100%;
+  @include responsive(large_desktop){
+    width: 55%;
+  }
+  @include responsive(tab){
+    width: 100%;
+    margin:0;
+    padding:.6rem;
+  }
+}
+.container-fullheight {
+  height: 100%;
+}
